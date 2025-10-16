@@ -8,12 +8,9 @@ class DemoTestApplicationTests {
 
 	@Test
 	void contextLoads() {
+        System.out.println("✅ Profil 'test' activé – si vous voyez ce message, la config H2 est utilisée.");
 	}
 
-	// Optionnel : ajoutez ce test pour vérifier la config
-    @Test
-    void testProfileIsActive() {
-        System.out.println("✅ Profil 'test' activé – si vous voyez ce message, la config H2 est utilisée.");
-    }
+	
 
 }
