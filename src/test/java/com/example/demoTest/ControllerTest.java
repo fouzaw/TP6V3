@@ -43,7 +43,7 @@ class ControllerTest {
     @Order(1)  // JUnit 5: this test runs first
     void shouldSaveStudent() {
         Student student = new Student();
-        student.setName("Charlie");
+        student.setName("Mohamed");
         student.setAddress("Algeria");
 
         studentRepository.save(student); // Save to H2 database
@@ -57,7 +57,10 @@ class ControllerTest {
     @Order(2)  // JUnit 5: this test runs second
     void shouldFindAllStudents() {
         List<Student> students = studentRepository.findAll(); // Fetch all from H2
+        for (Student s : students) {
+            System.out.println("ID: " + s.getId() + ", Name: " + s.getName() + ", Address: " + s.getAddress());
+        }
         assertThat(students).hasSize(1);                      // AssertJ: check list size
-        assertThat(students.get(0).getName()).isEqualTo("Charlie"); // AssertJ: check student name
+        assertThat(students.get(0).getName()).isEqualTo("Mohamed"); // AssertJ: check student name
     }
 }
